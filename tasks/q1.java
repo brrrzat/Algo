@@ -14,20 +14,19 @@ public class q1 {
         return;
     };
 
-    // Создаём два массива длинна, которых равна длинне изначального массива(array / 2) и оставшейся длинне.
+    // Create two arrays whose length is equal to the length of the original array (array / 2) and the remaining length.
     int mid = array.length / 2;
     int[] left = new int[mid]; 
     int[] right = new int[array.length - mid];
     
-    // Копируем значения изначального массива в left и ritghy
-    System.arraycopy(array, 0, left, 0, mid); // (Источник данных, с какого индекса начать копировать, куда копировать, с какого индекса начать вставлять в left, до какого индекса копировать)
-    System.arraycopy(array, mid, right, 0, array.length - mid); // Тоже самое, но здесь мы начинаем с середины
+   // Copy the values ​​of the original array to left and right
+    System.arraycopy(array, 0, left, 0, mid); // (Data source, from which index to start copying, where to copy, from which index to start inserting into the left, up to which index to copy)
+    System.arraycopy(array, mid, right, 0, array.length - mid); // Same thing, but here we start from the middle
     
-    // Рекурсия. Повторяем до тех пока не останется по одному значению на массив. За это отвечает условие на 12 строке
+   // Recursion. Repeat until there is one value left per array. This is determined by the condition on line 12.
     mergeSort(right);
     mergeSort(left);
-
-    // Сортируем и объединяем из left и right в изначальный массив(array)
+// Sort and merge from left and right into the original array
     merge(array, left, right);
    }
 
