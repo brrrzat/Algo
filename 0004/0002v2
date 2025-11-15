@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = sc.nextInt();
+
+        System.out.println("Enter math operator (+, -, *, /): ");
+        int operator = sc.next().charAt(0);
+
+        System.out.print("Enter second number: ");
+        int num2 = sc.nextInt();
+        int sum = 0; 
+        switch (operator) {
+            case '+':
+                sum = num1 + num2;
+                System.out.println("The output is: " + sum);
+                break;
+            case '-':
+                sum = num1 - num2;
+                System.out.println("The output is: " + sum);
+                break;
+            case '*':
+                sum = num1 * num2;
+                System.out.println("The output is: " + sum);
+                break;
+            case '/':
+                sum = num1 / num2;  
+                System.out.println("The output is: " + sum);
+                break;
+            default:
+            
+                break;
+                
+        }
+
+        
+    }
+}
